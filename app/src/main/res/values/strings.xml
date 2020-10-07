@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name"> Canopus</string>
+    <string name="add_inventor">Create Free Account</string>
+    <string name="edit_inventor">Update Your Account</string>
+</resources>

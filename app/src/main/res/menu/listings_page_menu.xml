@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    tools:context="info.camposha.canopus_ums.view.ui.activities.ListingsActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="1"
+        myapp:showAsAction="always"
+        android:title="Search"
+        android:icon="@drawable/ic_search" />
+    <item
+        android:id="@+id/action_dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="never" />
+</menu>

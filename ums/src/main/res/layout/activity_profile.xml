@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="info.camposha.canopus_ums.data.model.entity.User" />
+
+        <variable
+            name="callback"
+            type="info.camposha.canopus_ums.view.ui.activities.AccountActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#12153B"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/aboutUsToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/backArrow"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_back_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/backArrow"
+                        android:text="About Me"
+                        android:textColor="@color/white"
+                        android:textSize="21sp" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </LinearLayout>
+        <!--Toolbar-->
+        <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@+id/toolbarLayout"
+           >
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/profile2"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp" />
+
+            <ImageView
+                android:id="@+id/editAccount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_toRightOf="@+id/profileImg"
+                android:src="@android:drawable/ic_menu_edit"
+                app:tint="@color/white" />
+
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileImg"
+                android:layout_marginTop="5dp"
+                android:text="@={user.name}"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/roleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@={user.email}"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal" />
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryDark"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="#FFFFFF">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/basicTab"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Basic" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/accoutTab"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Account" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/headerLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/basicLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        fontPath="fonts/aniron.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Details"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/white"
+                        android:textStyle="italic"
+                        android:gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="GENDER"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/genderTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="UNKNOWN"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="COUNTRY"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/countryTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="UNKNOWN"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="DOB"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/dobTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="UNKNOWN"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <TextView
+                        fontPath="fonts/aniron.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="About Me"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/white"
+                        android:textStyle="italic"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/bioTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/text_padding"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                </LinearLayout>
+                </ScrollView>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                    android:id="@+id/accountLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="Email"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/emailTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="@={user.email}"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="Password"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/passwordTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="@={user.password}"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="Registeration Date"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/registerationDateTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="UNKNOWN"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="STATUS"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/statusTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:padding="@dimen/text_padding"
+                            android:text="ACTIVE"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+                    <TextView
+                        fontPath="fonts/aniron.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Want to Leave Us?"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/white"
+                        android:textStyle="italic"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="If you Press delete Your account will
+be deleted completely. This action is not reversable. If you are sure
+then just enter your pin and press delete."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/deleteAccountBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="DELETE ACCOUNT"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
