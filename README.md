@@ -1,3 +1,5 @@
+![Canopus](https://jitpack.io/v/Oclemy/Canopus.svg)
+
 # What is Canopus?
 Canopus is a User Management library utilizing my own personal server to store users. I have created it so that I use it my personal projects and for my students.
 
