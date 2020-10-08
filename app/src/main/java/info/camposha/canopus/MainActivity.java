@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         // Check which request we're responding to
         if (requestCode == 1) {
-            // Make sure the request was successful
+            // if the request was successful
             if (resultCode == Activity.RESULT_OK) {
                 if(data != null){
                     //Use the below code to obtain results:
