@@ -6,7 +6,7 @@ Canopus is a User Management library utilizing my own personal server to store u
 ## Motivation
 When am creating my own projects or those I develop when teaching a course, they tend to need user management features like login and registeration functionalities. I don't want to
 be spending alot of time duplicating those features in each and every project. So I have decided to host it right here in github so that I can easily install it newer projects. This
-not only saves me time but also gives me a way to maintain, upgrade and features to older projects at once.
+not only saves me time but also gives me a way to maintain, upgrade and add features to older projects at once.
 
 ## NB/=
 This library is for personal use and also for my students. Am hosting everything in my server. However you can adjust the code to meet your specific scenario in your projects.
