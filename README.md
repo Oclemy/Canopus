@@ -33,5 +33,5 @@ In the root build.gradle:
 Then dependency:
 
 ```groovy
-implementation 'com.github.Oclemy:Canopus:1.0.0'
+implementation 'com.github.Oclemy:Canopus:1.0.1'
 ```
