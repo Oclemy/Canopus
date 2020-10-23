@@ -303,7 +303,6 @@
                                         android:hint="What is your dad's first name?"
                                         android:text="@={user.securityQuestion}" />
                             </LinearLayout>
-
                         </androidx.cardview.widget.CardView>
 
                         <Button
