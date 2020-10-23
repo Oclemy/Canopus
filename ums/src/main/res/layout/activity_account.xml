@@ -123,6 +123,8 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp"
                             android:layout_margin="8dp">
 
                             <LinearLayout
@@ -138,47 +140,36 @@
                                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                                     android:textColor="@color/niceGreenish" />
 
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
 
                                     <EditText
                                         android:id="@+id/loginEmailTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginTop="8dp"
-                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginBottom="16dp"
                                         android:hint="Email"
                                         android:text="@={user.name}"
                                         tools:ignore="MissingPrefix" />
-                                </com.google.android.material.textfield.TextInputLayout>
 
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
+
 
                                     <EditText
                                         android:id="@+id/loginPasswordTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginBottom="16dp"
                                         android:hint="Password"
                                         android:text="@={user.password}"
                                         tools:ignore="MissingPrefix" />
-                                </com.google.android.material.textfield.TextInputLayout>
 
                             </LinearLayout>
 
@@ -212,6 +203,8 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp"
                             android:layout_margin="8dp">
 
                             <LinearLayout
@@ -227,69 +220,51 @@
                                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                                     android:textColor="@color/niceGreenish" />
 
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
+
 
                                     <EditText
                                         android:id="@+id/nameTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginBottom="16dp"
                                         android:hint="Name"
                                         android:text="@={user.name}"
                                         tools:ignore="MissingPrefix" />
-                                </com.google.android.material.textfield.TextInputLayout>
 
-
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
 
                                     <EditText
                                         android:id="@+id/emailTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginBottom="8dp"
                                         android:hint="Email"
                                         android:text="@={user.name}"
                                         tools:ignore="MissingPrefix" />
-                                </com.google.android.material.textfield.TextInputLayout>
-
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
 
                                     <EditText
                                         android:id="@+id/passwordTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginBottom="16dp"
                                         android:hint="Password"
+                                        android:inputType="textVisiblePassword"
                                         android:text="@={user.password}"
                                         tools:ignore="MissingPrefix" />
-                                </com.google.android.material.textfield.TextInputLayout>
 
                             </LinearLayout>
 
@@ -298,7 +273,9 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/card_margin">
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="8dp"
+                            android:layout_margin="8dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -313,25 +290,18 @@
                                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                                     android:textColor="@color/niceGreenish" />
 
-                                <com.google.android.material.textfield.TextInputLayout
-                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp">
-
                                     <EditText
                                         android:id="@+id/securityTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginRight="8dp"
                                         android:layout_marginBottom="16dp"
                                         android:hint="What is your dad's first name?"
                                         android:text="@={user.securityQuestion}" />
-                                </com.google.android.material.textfield.TextInputLayout>
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
