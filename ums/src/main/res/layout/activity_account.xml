@@ -26,6 +26,7 @@
             android:id="@+id/toolbarLayout"
             android:orientation="vertical"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="50dp">
 
             <androidx.appcompat.widget.Toolbar
@@ -53,19 +54,34 @@
 
         </LinearLayout>
         <!--Toolbar-->
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:background="@drawable/nav_header_backgound"
             android:layout_below="@+id/toolbarLayout">
 
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Welcome"
+                android:fontFamily="casual"
+                android:layout_margin="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
             <ImageView
                 android:id="@+id/profileImg"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/m_circle_bg_white"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_lock"/>
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/account_profile"/>
 <!--            <de.hdodenhof.circleimageview.CircleImageView-->
 <!--                android:id="@+id/profileImg"-->
 <!--                android:layout_width="100dp"-->
@@ -76,7 +92,7 @@
 
 <!--                app:civ_border_width="3dp" />-->
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <include layout="@layout/_state"/>
 
