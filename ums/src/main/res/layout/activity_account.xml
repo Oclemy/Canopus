@@ -44,6 +44,8 @@
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
                         android:text="Welcome"
+                        android:fontFamily="casual"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -55,18 +57,24 @@
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbarLayout"
-            android:layout_margin="10dp">
+            android:layout_below="@+id/toolbarLayout">
 
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/profileImg"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/profile2"
-                app:civ_border_color="@color/white"
-                app:civ_border_width="3dp" />
+                android:src="@drawable/home_lock"/>
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/profileImg"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:src="@drawable/account_profile"-->
+<!--                app:civ_border_color="@color/colorAccent"-->
+
+<!--                app:civ_border_width="3dp" />-->
 
         </RelativeLayout>
 
