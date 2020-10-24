@@ -31,8 +31,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/aboutUsToolBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimaryDark">
+                android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -44,9 +43,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
-                        android:text="Login/Register"
+                        android:text="Welcome"
                         android:textColor="@color/white"
-                        android:textSize="21sp" />
+                        android:textStyle="bold" />
                 </RelativeLayout>
             </androidx.appcompat.widget.Toolbar>
 
@@ -57,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbarLayout"
-            android:layout_margin="30dp">
+            android:layout_margin="10dp">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -70,268 +69,45 @@
                 app:civ_border_width="3dp" />
 
         </RelativeLayout>
+
         <include layout="@layout/_state"/>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/tabs"
+            app:stl_clickable="true"
+            app:stl_defaultTabBackground="?attr/selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="true"
+            app:stl_defaultTabTextColor="@color/white"
+            app:stl_defaultTabTextHorizontalPadding="16dp"
+            app:stl_defaultTabTextMinWidth="0dp"
+            app:stl_defaultTabTextSize="12sp"
+            app:stl_distributeEvenly="false"
+            app:stl_dividerColor="#4D000000"
+            app:stl_dividerThickness="1dp"
+            app:stl_drawDecorationAfterTab="true"
+            app:stl_indicatorAlwaysInCenter="true"
+            app:stl_indicatorColor="#40C4FF"
+            app:stl_indicatorCornerRadius="2dp"
+            app:stl_indicatorGravity="bottom"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="4dp"
+            app:stl_indicatorWidth="auto"
+            app:stl_indicatorWithoutPadding="false"
+            app:stl_overlineColor="#4D000000"
+            app:stl_overlineThickness="0dp"
+            app:stl_titleOffset="24dp"
+            app:stl_underlineColor="#4D000000"
+            app:stl_underlineThickness="1dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/colorPrimaryDark"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="#FFFFFF">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/loginTab"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="LOGIN" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/registerTab"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Register" />
-
-        </com.google.android.material.tabs.TabLayout>
+            android:layout_height="48dp" />
 
 
-        <LinearLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/headerLayout"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_height="match_parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/loginLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="8dp"
-                            android:layout_margin="8dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:padding="@dimen/text_padding"
-                                    android:text="Enter Sign in Details"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                                    android:textColor="@color/niceGreenish" />
-
-
-                                    <EditText
-                                        android:id="@+id/loginEmailTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginTop="8dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:hint="Email"
-                                        android:text="@={user.name}"
-                                        tools:ignore="MissingPrefix" />
-
-
-
-                                    <EditText
-                                        android:id="@+id/loginPasswordTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:hint="Password"
-                                        android:text="@={user.password}"
-                                        tools:ignore="MissingPrefix" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-
-                        <Button
-                            android:id="@+id/loginBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:background="@color/colorAccent"
-                            android:textColor="@color/white"
-                            android:text="Login" />
-
-
-                    </LinearLayout>
-                </ScrollView>
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/registerLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:orientation="vertical">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="8dp"
-                            android:layout_margin="8dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:padding="@dimen/text_padding"
-                                    android:text="Enter Account Details"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                                    android:textColor="@color/niceGreenish" />
-
-
-
-                                    <EditText
-                                        android:id="@+id/nameTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:hint="Name"
-                                        android:text="@={user.name}"
-                                        tools:ignore="MissingPrefix" />
-
-
-                                    <EditText
-                                        android:id="@+id/emailTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginBottom="8dp"
-                                        android:hint="Email"
-                                        android:text="@={user.name}"
-                                        tools:ignore="MissingPrefix" />
-
-                                    <EditText
-                                        android:id="@+id/passwordTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:hint="Password"
-                                        android:inputType="textVisiblePassword"
-                                        android:text="@={user.password}"
-                                        tools:ignore="MissingPrefix" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="8dp"
-                            android:layout_margin="8dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:padding="@dimen/text_padding"
-                                    android:text="Security"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                                    android:textColor="@color/niceGreenish" />
-
-                                    <EditText
-                                        android:id="@+id/securityTxt"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginStart="8dp"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="8dp"
-                                        android:layout_marginRight="8dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:hint="What is your dad's first name?"
-                                        android:text="@={user.securityQuestion}" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-
-                        <Button
-                            android:id="@+id/postBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:background="@color/colorAccent"
-                            android:textColor="@color/white"
-                            android:text="Create Account" />
-
-                        <Button
-                            android:id="@+id/deleteAccountBtn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:background="@color/colorAccent"
-                            android:textColor="@color/white"
-                            android:visibility="gone"
-                            android:text="Delete Account" />
-
-
-                    </LinearLayout>
-                </ScrollView>
-
-
-
-            </LinearLayout>
-        </LinearLayout>
 
 
     </LinearLayout>
