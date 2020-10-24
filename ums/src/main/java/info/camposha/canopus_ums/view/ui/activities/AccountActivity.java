@@ -139,7 +139,7 @@ public class AccountActivity extends AccountBaseActivity {
         });
     }
 
-
+    //update user
     private void update(User u) {
         getViewModel().update(u).observe(this, r -> {
             if (makeRequest(r, "USER UPDATE") == SUCCEEDED) {
