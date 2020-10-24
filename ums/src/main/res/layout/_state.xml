@@ -6,7 +6,6 @@
     android:background="@color/color_7"
     android:orientation="horizontal"
     android:visibility="gone">
-
     <ProgressBar
         android:id="@+id/pb"
         android:layout_width="50dp"
