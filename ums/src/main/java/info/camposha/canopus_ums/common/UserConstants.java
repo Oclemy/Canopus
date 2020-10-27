@@ -2,7 +2,7 @@ package info.camposha.canopus_ums.common;
 
 public class UserConstants {
     public static final String DATE_FORMAT = "yyyy-MM-dd";
-    public  static  final String BASE_URL = "https://camposha.info/php/user/canopus/";
+    public  static  String BASE_URL = "https://camposha.info/php/user/canopus/";
 
     //To use Localhost use your ip address e.g
     //To find your ip address, first connect to wifi, then in your command prompt type ipconfig
